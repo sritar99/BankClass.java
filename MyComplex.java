@@ -2,66 +2,66 @@ import java.util.*;
 
 class MyComplex
 {
-private double real,imag;
+   private double real,imag;
 
-MyComplex()
-{
-real=0.0;
-imag=0.0;
-}
+    MyComplex()
+    {
+      real=0.0;
+      imag=0.0;
+     }
 
-MyComplex(double real , double imag)
-{
-this.real=real;
-this.imag=imag;
-}
+    MyComplex(double real , double imag)
+   {
+      this.real=real;
+      this.imag=imag;
+   }
 
-void setReal(double real)
-{
-  this.real=real;
-}
-double getReal()
-{
-return real;
-}
+    void setReal(double real)
+    {
+      this.real=real;
+    }
+    double getReal()
+    {
+      return real;
+    }
 
-void setImag(double imag)
-{
-this.imag=imag;
-}
+    void setImag(double imag)
+    {
+       this.imag=imag;
+    }
 
-double getImag()
-{
- return imag;
-}
+    double getImag()
+    {
+        return imag;
+    }
 
-void setValue(double real , double imag)
-{
-this.real=real;
-this.imag=imag;
-}
+    void setValue(double real , double imag)
+    {
+       this.real=real;
+       this.imag=imag;
+    }
 
 String tostring()
 {
   String val = real+"+";
    val = val+"i"+imag;
-return val;
+   return val;
 }
 
 boolean isReal()
-{
- if(imag==0)
-  return true;
-else
-return false;
-}
+  {
+    if(imag==0)
+     return true;
+   else
+   return false;
+  }
 
 boolean isImaginary()
 {
-  if(real==0 && imag!=0)
+  if(imag!=0)
   return true;
    else
-return false;
+  return false;
 }
 
 
@@ -85,9 +85,9 @@ boolean equals(MyComplex obj)
 
 double magnitude()
 {
-double mag = Math.sqrt(real*real+imag*imag);
+double m= Math.sqrt(real*real+imag*imag);
 
-return mag;
+return m;
 }
 
 double argument()
@@ -103,9 +103,9 @@ MyComplex add(MyComplex obj )
   r=this.real+obj.real;
   i = this.imag+obj.imag;
   
-MyComplex o1 = new MyComplex(r,i);
+MyComplex obj1 = new MyComplex(r,i);
 
-return o1;
+return obj1;
 }
 
 
@@ -115,9 +115,9 @@ MyComplex subtract(MyComplex obj )
   r=this.real-obj.real;
   i = this.imag-obj.imag;
   
-MyComplex o1 = new MyComplex(r,i);
+MyComplex obj1 = new MyComplex(r,i);
 
-return o1;
+return obj1;
 }
 
 MyComplex multiply(MyComplex obj)
@@ -127,28 +127,23 @@ MyComplex multiply(MyComplex obj)
  r = (this.real*real - this.imag*imag);
  i = (this.real*imag+this.imag+real);
 
-MyComplex o1 = new MyComplex(r,i);
+MyComplex obj1 = new MyComplex(r,i);
 
-return o1;
+return obj1;
 }
 
-/**
+
 MyComplex divide(MyComplex obj)
 {
  
- double r,i;
- r= (this.real+
-Mycomplex o1 = new MyComplex(r,i);
-return o1;
-}
-*/
+r=((real*this.real+imag*this.imag)/(this.real*this.real+this.imag*this.imag));
 
+    i=((this.real*imag-real*this.imag)/(this.real*this.real+this.imag*this.imag));
 
-MyComplex conjugate(MyComplex obj)
-{
- 
-return new MyComplex(real,-imag);
+    MyComplex obj=new MyComplex(r,i);
+   return obj1;
 }
+
 
 
 }
@@ -160,20 +155,20 @@ class MyComplexApp
 public static void main(String args[])
 {
 
-Scanner sc = new Scanner(System.in);
+Scanner s = new Scanner(System.in);
 
 System.out.println("Enter complex number 1 (real and imaginary part): ");
 double r,i;
 
-r= sc.nextDouble();
-i = sc.nextDouble();
+r= s.nextDouble();
+i = s.nextDouble();
 
 MyComplex obj1 = new MyComplex(r,i);
 
 System.out.println("Enter complex number 2 (real and imaginary part): ");
  
-r = sc.nextDouble();
-i = sc.nextDouble();
+r = s.nextDouble();
+i = s.nextDouble();
 
 MyComplex obj2 = new MyComplex(r,i);
 
