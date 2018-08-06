@@ -1,8 +1,8 @@
 import java.util.*;
 
-class MyComplex
+public class MyComplex
 {
-   private double real,imag;
+   double real,imag;
 
     MyComplex()
     {
@@ -115,7 +115,7 @@ MyComplex subtract(MyComplex obj )
   r=this.real-obj.real;
   i = this.imag-obj.imag;
   
-MyComplex obj1 = new MyComplex(r,i);
+MyComplex obj1 = new MyComplex(double r,double i);
 
 return obj1;
 }
@@ -127,7 +127,7 @@ MyComplex multiply(MyComplex obj)
  r = (this.real*real - this.imag*imag);
  i = (this.real*imag+this.imag+real);
 
-MyComplex obj1 = new MyComplex(r,i);
+MyComplex obj1 = new MyComplex(double r,double i);
 
 return obj1;
 }
@@ -140,8 +140,8 @@ r=((real*this.real+imag*this.imag)/(this.real*this.real+this.imag*this.imag));
 
     i=((this.real*imag-real*this.imag)/(this.real*this.real+this.imag*this.imag));
 
-    MyComplex obj=new MyComplex(r,i);
-   return obj1;
+    MyComplex obj=new MyComplex( r, i);
+   return obj;
 }
 
 
@@ -149,7 +149,7 @@ r=((real*this.real+imag*this.imag)/(this.real*this.real+this.imag*this.imag));
 }
 
 
-class MyComplexApp
+public class MyComplexApp
 
 {
 public static void main(String args[])
@@ -172,7 +172,7 @@ i = s.nextDouble();
 
 MyComplex obj2 = new MyComplex(r,i);
 
-System.out.println("Number 1 is : "+obj1.tostring());
+System.out.println("Number 1 is : "+ obj1.tostring());
 
  if(obj1.isReal())
   System.out.println(obj1.tostring()+" is a pure number");
@@ -222,4 +222,3 @@ System.out.println((obj1.tostring())+"-"+(obj2.tostring())+"="+(obj1.subtract(ob
 
  }
 }
- 
