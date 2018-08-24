@@ -1,0 +1,46 @@
+#include<stdio.h>
+int main()
+{
+ int i,n,x;
+ char name[100],At[100];
+ int c = 0, count[26] = {0};
+ printf("Enter the no of inputs\n");
+ scanf("%d",&n);
+ for(i=0;i<n;i++)
+ {
+    printf("Enter the no of students\n");
+    scanf("%d",&x);
+    for(i=0;i<x;i++)
+    {
+	 printf("Enter the student names:\n");
+     
+       scanf("%s",&name[i]);   
+	}
+	for(i=0;i<x;i++)
+    {
+	   printf("Enter the students attendance:\n");
+     
+       scanf("%c",&At[i]); 
+ 
+       while ( At[c] != '\0' )
+       {
+      
+ 
+         if ( At[c] >= 'a' && At[c] <= 'z' ) 
+            count[At[c]-'a']++;
+ 
+            c++;
+       }
+ 
+      for ( c = 0 ; c < 26 ; c++ )
+      {
+         if( count[c] != 0 )
+           printf("%c occurs %d times in the attendace string.\n",c+'a',count[c]);
+      }
+   
+	}
+    
+ }
+
+  
+}
